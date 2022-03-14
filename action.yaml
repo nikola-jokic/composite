@@ -1,0 +1,37 @@
+name: 'Issue'
+description: 'Composite example'
+inputs:
+  ruby-version:
+    description: 'Ruby version'
+    required: false
+    default: '2.6.0'
+runs:
+  using: "composite"
+  steps:
+    - name: Setup rbenv
+      run: |
+        echo "::group::Installing rbenv..."
+        brew list rbenv || brew install rbenv
+        echo "~/.rbenv/shims" >> $GITHUB_PATH
+        echo "::endgroup::"
+      shell: bash
+
+    - name: Setup Ruby
+      run: |
+        echo "::group::Setting up ruby environment..."
+        rbenv install ${{ inputs.ruby-version }} -s
+        rbenv local ${{ inputs.ruby-version }}
+        rbenv rehash
+        which ruby
+        rbenv which ruby
+        echo "::endgroup::"
+      shell: bash
+
+    - name: Bundle Install
+      run: |
+        echo "::group::Running bundle install..."
+        gem env home
+        gem install bundle
+        bundle install
+        echo "::endgroup::"
+      shell: bash
