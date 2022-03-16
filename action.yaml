@@ -16,6 +16,6 @@ runs:
 
     - name: Setup Ruby
       run: |
-        exit 1
+        exit 2
       shell: bash
 
