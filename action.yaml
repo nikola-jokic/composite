@@ -8,7 +8,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    
+    - name: use step
+      uses: nikola-jokic/failing-composite@main
+      continue-on-error: true
     - name: First
       id: foo
       run: |
