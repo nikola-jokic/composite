@@ -16,16 +16,6 @@ runs:
 
     - name: Setup Ruby
       run: |
-        echo "::group::Setting up ruby environment..."
-        echo "testing this"
-        echo "another echo"
-        echo "::endgroup::"
+        exit 1
       shell: bash
 
-    - name: Bundle Install
-      run: |
-        echo "::group::Running bundle install..."
-        echo "testing this"
-        echo "another echo"
-        echo "::endgroup::"
-      shell: bash
