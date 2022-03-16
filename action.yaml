@@ -10,11 +10,9 @@ runs:
   steps:
     - name: Setup rbenv
       run: |
-        echo "::group::Installing rbenv..."
-        echo "testing this"
-        echo "another echo"
-        echo "::endgroup::"
+        exit 1
       shell: bash
+      continue-on-error: true
 
     - name: Setup Ruby
       run: |
