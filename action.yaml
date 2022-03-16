@@ -10,7 +10,7 @@ runs:
   steps:
     - name: use step
       uses: nikola-jokic/failing-composite@main
-      continue-on-error: false
+      continue-on-error: true
     - name: First
       id: foo
       run: |
