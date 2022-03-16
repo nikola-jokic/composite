@@ -8,8 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: checkout
-      uses: 
+    
     - name: First
       id: foo
       run: |
@@ -17,6 +16,7 @@ runs:
       shell: bash
       continue-on-error: true
     - name: Dump steps context
+      shell: bash
       run: echo '${{ toJSON(steps) }}'
 
     - name: Second
