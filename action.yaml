@@ -1,14 +1,10 @@
 name: 'test actions'
 description: 'test action description'
-inputs:
-  shell:
-    description: 'shell to use'
-    required: false
-    default: bash
+
 runs:
   using: "composite"
   steps:
     - name:
       run: echo "bla bla bla"
-      shell: ${{ inputs.shell }}
+      shell: bash
 
