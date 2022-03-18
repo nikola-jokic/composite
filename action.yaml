@@ -1,15 +1,14 @@
-name: 'Composite test'
-description: 'Composite example'
-
+name: 'test actions'
+description: 'test action description'
+inputs:
+  shell:
+    description: 'shell to use'
+    required: false
+    default: bash
 runs:
   using: "composite"
   steps:
-    - run: chmod +x ${{ github.action_path }}/test/script2.sh
-      shell: bash
-    - run: chmod +x $GITHUB_ACTION_PATH/script.sh
-      shell: bash
-    - run: ${{ github.action_path }}/test/script2.sh
-      shell: bash
-    - run: $GITHUB_ACTION_PATH/script.sh
-      shell: bash
+    - name:
+      run: echo "bla bla bla"
+      shell: ${{ inputs.shell }}
 
