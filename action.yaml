@@ -11,8 +11,9 @@ runs:
   
   steps:
     - name: whatever...
-      run: echo 'yellow'
+      run: echo '::set-output name=SELECTED_COLOR::green'
+      id: whatever
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}', hashFiles('./*')) }}
+      shell: ${{ format('{0}', outputs.whatever.SELECTED_COLOR) }}
 
