@@ -1,10 +1,13 @@
 name: 'test actions'
 description: 'test action description'
 
+input:
+  shell:
+    default: bash
 runs:
   using: "composite"
   steps:
     - name:
       run: echo "bla bla bla"
-      shell: bash
+      shell: ${{ input.shell }}
 
