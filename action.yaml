@@ -15,5 +15,5 @@ runs:
       id: whatever
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}', outputs.whatever.SELECTED_COLOR) }}
+      shell: ${{ format('{0}', steps.whatever.SELECTED_COLOR) }}
 
