@@ -13,5 +13,5 @@ runs:
     
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}', steps) }}
+      shell: ${{ format('{0}', toJSON(steps.whatever.outputs)) }}
 
