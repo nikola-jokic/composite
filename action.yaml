@@ -1,8 +1,10 @@
 name: 'test actions'
 description: 'test action description'
 
-input:
+inputs:
   shell:
+    description: 'shell to use'
+    required: false
     default: bash
 runs:
   using: "composite"
