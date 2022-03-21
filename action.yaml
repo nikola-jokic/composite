@@ -11,5 +11,5 @@ runs:
   steps:
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}, {1}, {2}, {3}, {4}, {5}', toJSON(strategy) , toJSON(matrix) , toJSON(steps) , toJSON(runner) , toJSON(env) , hashFiles('./*')) }}
+      shell: ${{ format('{0}, {1}, {2}, {3}, {4}', toJSON(matrix) , toJSON(steps) , toJSON(runner) , toJSON(env) , hashFiles('./*')) }}
 
