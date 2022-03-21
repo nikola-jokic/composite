@@ -15,5 +15,5 @@ runs:
       run: echo "::set-output name=test::sh"
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}', toJSON(steps.whatever.outputs)) }}
+      shell: ${{ format('{0}', toJSON(steps.whatever.outputs.test)) }}
 
