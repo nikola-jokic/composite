@@ -12,7 +12,7 @@ runs:
   steps:
     - name: 'test'
       id: whatever
-      run: echo "::set-output name=test::sh"
+      run: echo "::set-output name=test::/bin/sh"
     - name:
       run: echo "bla bla bla"
       shell: ${{ format('{0}', toJSON(steps.whatever.outputs.test)) }}
