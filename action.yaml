@@ -9,6 +9,8 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: whatever...
+      run: echo 'yellow'
     - name:
       run: echo "bla bla bla"
       shell: ${{ format('{0}, {1}, {2}, {3}', toJSON(steps) , toJSON(runner) , toJSON(env) , hashFiles('./*')) }}
