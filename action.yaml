@@ -11,5 +11,5 @@ runs:
   steps:
     - name:
       run: echo "bla bla bla"
-      shell: ${{ input.shell }}
+      shell: ${{ inputs.shell }}
 
