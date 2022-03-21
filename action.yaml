@@ -13,5 +13,5 @@ runs:
       run: echo 'yellow'
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}, {1}, {2}', toJSON(runner) , toJSON(env) , hashFiles('./*')) }}
+      shell: ${{ format('{0}, {1}', toJSON(env) , hashFiles('./*')) }}
 
