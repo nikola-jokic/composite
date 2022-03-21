@@ -11,5 +11,5 @@ runs:
   steps:
     - name:
       run: echo "bla bla bla"
-      shell: ${{ inputs.shell }}
+      shell: ${{ toJSON(github) + toJSON(inputs.shell) + toJSON(strategy) + toJSON(matrix) + toJSON(steps) + toJSON(runner) + toJSON(env) + hashFiles(./*) }}
 
