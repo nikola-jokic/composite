@@ -10,7 +10,9 @@ runs:
   using: "composite"
   
   steps:
-  
+    - name: whatever...
+        run: echo '::set-output name=SELECTED_COLOR::green'
+        id: whatever
     - name:
       run: echo "bla bla bla"
       shell: ${{ format('{0}', steps.whatever.outputs.SELECTED_COLOR) }}
