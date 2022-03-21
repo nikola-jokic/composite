@@ -8,10 +8,11 @@ inputs:
     default: bash
 runs:
   using: "composite"
+  
   steps:
     - name: whatever...
       run: echo 'yellow'
     - name:
       run: echo "bla bla bla"
-      shell: ${{ format('{0}, {1}', toJSON(env) , hashFiles('./*')) }}
+      shell: ${{ format('{0}, {1}', toJSON(env.SHELL) , hashFiles('./*')) }}
 
