@@ -3,8 +3,5 @@
     - run: printenv
       shell: bash
     - name: "run"
-      run: |
-        echo '${{ github.action_path }}'
-        echo ${{ github.event_path }}
-        echo ${{ github.workspace }}
+      run: echo '${{github.workspace}}'
       shell: bash
