@@ -1,7 +1,12 @@
+  
+name: 'test actions'
+description: 'test action description'
+
+runs:
   using: "composite"
   steps:
-    - run: printenv
-      shell: bash
-    - name: "run"
-      run: echo '${{github.workspace}}'
-      shell: bash
+  - run: printenv
+    shell: bash
+  - name: "run"
+    run: echo '${{github.workspace}}'
+    shell: bash
