@@ -2,8 +2,9 @@
   steps:
     - run: printenv
       shell: bash
-    - run: |
-        echo ${{github.action_path}}
-        echo ${{github.event_path}}
-        echo ${{github.workspace}}
+    - name: "run"
+      run: |
+        echo ${{ github.action_path }}
+        echo ${{ github.event_path }}
+        echo ${{ github.workspace }}
       shell: bash
