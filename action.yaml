@@ -20,6 +20,9 @@ runs:
     continue-on-error: true
     run: exit 1
     shell: bash
+  - name: Continue uses
+    uses: nikola-jokic/failing-composite@main
+    continue-on-error: true
   - name: After continue on error
     run: echo "yay"
     shell: bash
