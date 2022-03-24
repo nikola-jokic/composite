@@ -16,3 +16,10 @@ runs:
       echo ${{github.event_path}}
       echo ${{github.workspace}}
     shell: bash
+  - name: Continue on error
+    continue-on-error: true
+    run: exit 1
+    shell: bash
+  - name: After continue on error
+    run: echo "yay"
+    shell: bash
