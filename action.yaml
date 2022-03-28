@@ -3,6 +3,7 @@ runs:
   defaults:
     run:
       shell: bash
+      working-directory: custom
   steps:
     - run: echo "bla bla 1"
     - run: echo "bla bla 2"
