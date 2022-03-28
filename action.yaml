@@ -1,24 +1,9 @@
-  
-name: 'test actions'
-description: 'test action description'
-
 runs:
   using: "composite"
+  defaults:
+    run:
+      shell: bash
   steps:
-  - run: printenv
-    shell: bash
-  - name: "run"
-    env:
-      WORKSPACE: my workspace is ${{ github.workspace }}
-    run: |
-      echo $WORKSPACE
-      echo ${{github.action_path}}
-      echo ${{github.event_path}}
-      echo ${{github.workspace}}
-      echo ${{runner.tool_cache}}
-      echo ${{runner.temp}}
-    shell: bash
-  
-  - name: After continue on error
-    run: echo "yay"
-    shell: bash
+    - run: echo "bla bla 1"
+    - run: echo "bla bla 2"
+    - run: echo "bla bla 3"
