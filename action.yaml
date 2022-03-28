@@ -5,6 +5,8 @@ runs:
       shell: bash
       working-directory: custom
   steps:
+    - run: bash ./shell.sh
+    - run: pwd
     - run: echo "bla bla 1"
     - run: echo "bla bla 2"
     - run: echo "bla bla 3"
