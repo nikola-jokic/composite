@@ -2,7 +2,7 @@ runs:
   using: "composite"
   defaults:
     run:
-      shell: bash
+      #shell: bash
       working-directory: custom
   steps:
     - run: pwd
