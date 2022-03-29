@@ -1,12 +1,21 @@
 runs:
   using: "composite"
-  defaults:
-    run:
-      #shell: bash
-      working-directory: custom
-  steps:
-    - run: pwd
-    - run: ./shell.sh
-    - run: echo "bla bla 1"
-    - run: echo "bla bla 2"
-    - run: echo "bla bla 3"
+    steps:
+      - run: printenv
+        shell: bash
+      - run: |
+          echo ${{github.action_path}}
+          echo ${{github.event_path}}
+          echo ${{github.workspace}}
+        shell: bash
+#   using: "composite"
+#   defaults:
+#     run:
+#       #shell: bash
+#       working-directory: custom
+#   steps:
+#     - run: pwd
+#     - run: ./shell.sh
+#     - run: echo "bla bla 1"
+#     - run: echo "bla bla 2"
+#     - run: echo "bla bla 3"
