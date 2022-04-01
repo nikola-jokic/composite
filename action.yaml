@@ -25,8 +25,8 @@ runs:
   using: "composite"
   defaults:
     run:
-      #shell: bash
-      working-directory: custom
+      shell: bash
+      # working-directory: custom
   steps:
     - run: pwd
     - run: ./shell.sh
