@@ -26,7 +26,7 @@ runs:
   defaults:
     run:
       shell: sh
-      # working-directory: ./custom
+      working-directory: ./custom
   steps:
     - uses: actions/checkout@v2
     - run: echo $0
