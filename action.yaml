@@ -30,5 +30,5 @@ runs:
   steps:
     - uses: actions/checkout@v2
     - run: echo $0
-    - run: sh ./custom/shell.sh
+    - run: ls
 
