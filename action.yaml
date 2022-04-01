@@ -29,7 +29,7 @@ runs:
       working-directory: ./custom
   steps:
     - uses: actions/checkout@v2
-    - run: pwd
+    - run: echo $0
     - run: ./shell.sh
     - run: echo "bla bla 1"
     - run: echo "bla bla 2"
