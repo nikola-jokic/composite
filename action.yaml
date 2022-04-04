@@ -14,6 +14,7 @@ runs:
   
   
   using: "composite"
+  steps:
   - run: printenv
     shell: bash
   - shell: bash
