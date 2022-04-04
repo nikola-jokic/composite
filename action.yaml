@@ -14,21 +14,21 @@ runs:
   
   
   
-#   - run: printenv
-#     shell: bash
-#   - shell: bash
-#     run: |
-#       echo ${{github.action_path}}
-#       echo ${{github.event_path}}
-#       echo ${{github.workspace}}
+  - run: printenv
+    shell: bash
+  - shell: bash
+    run: |
+      echo ${{github.action_path}}
+      echo ${{github.event_path}}
+      echo ${{github.workspace}}
         
-  using: "composite"
-  defaults:
-    run:
-      shell: bash
-      working-directory: ./custom
-  steps:
-    - uses: actions/checkout@v2
-    - run: echo $0
-    - run: ls
+#   using: "composite"
+#   defaults:
+#     run:
+#       shell: bash
+#       working-directory: ./custom
+#   steps:
+#     - uses: actions/checkout@v2
+#     - run: echo $0
+#     - run: ls
 
