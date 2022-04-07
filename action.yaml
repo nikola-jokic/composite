@@ -13,15 +13,15 @@ runs:
 #     shell: bash
   
   
-  using: "composite"
-  steps:
-  - run: printenv
-    shell: bash
-  - shell: bash
-    run: |
-      echo ${{github.action_path}}
-      echo ${{github.event_path}}
-      echo ${{github.workspace}}
+#   using: "composite"
+#   steps:
+#   - run: printenv
+#     shell: bash
+#   - shell: bash
+#     run: |
+#       echo ${{github.action_path}}
+#       echo ${{github.event_path}}
+#       echo ${{github.workspace}}
         
   using: "composite"
   defaults:
