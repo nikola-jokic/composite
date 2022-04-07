@@ -1,35 +1,35 @@
 runs:
+#   using: "composite"
+#   steps:
+#   - name: Run failing
+#     run: exit 1
+#     continue-on-error: true
+#     shell: bash
+#   - name: Uses failing
+#     uses: nikola-jokic/failing-composite@main
+#     continue-on-error: true
+#   - name: Echo OK
+#     run: echo 'OK'
+#     shell: bash
+  
+  
   using: "composite"
   steps:
-  - name: Run failing
-    run: exit 1
-    continue-on-error: true
+  - run: printenv
     shell: bash
-  - name: Uses failing
-    uses: nikola-jokic/failing-composite@main
-    continue-on-error: true
-  - name: Echo OK
-    run: echo 'OK'
-    shell: bash
-  
-  
-#   using: "composite"
-#   steps:
-#   - run: printenv
-#     shell: bash
-#   - shell: bash
-#     run: |
-#       echo ${{github.action_path}}
-#       echo ${{github.event_path}}
-#       echo ${{github.workspace}}
+  - shell: bash
+    run: |
+      echo ${{github.action_path}}
+      echo ${{github.event_path}}
+      echo ${{github.workspace}}
         
-#   using: "composite"
-#   defaults:
-#     run:
-#       shell: sh
-#       working-directory: ./custom
-#   steps:
-#     - uses: actions/checkout@v2
-#     - run: echo $0
-#     - run: ls
+  using: "composite"
+  defaults:
+    run:
+      shell: sh
+      working-directory: ./custom
+  steps:
+    - uses: actions/checkout@v2
+    - run: echo $0
+    - run: ls
 
