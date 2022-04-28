@@ -5,7 +5,7 @@ runs:
   steps:
   - name: Run failing
     run: echo $0
-    shell: sh
+#     shell: sh
   
 #   steps:
 #   - run: printenv
