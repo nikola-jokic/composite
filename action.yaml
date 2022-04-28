@@ -3,6 +3,7 @@ runs:
   steps:
   - name: Run failing
     run: echo $0
+    shell: sh
   
   
 #   using: "composite"
