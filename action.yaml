@@ -1,12 +1,12 @@
 runs:
   using: "composite"
-  steps:
-  - name: Run failing
-    run: echo $0
-    shell: sh
+
+
+#   steps:
+#   - name: Run failing
+#     run: echo $0
+#     shell: sh
   
-  
-#   using: "composite"
 #   steps:
 #   - run: printenv
 #     shell: bash
@@ -16,13 +16,12 @@ runs:
 #       echo ${{github.event_path}}
 #       echo ${{github.workspace}}
         
-#   using: "composite"
-#   defaults:
-#     run:
-#       shell: sh
-#       working-directory: ./custom
-#   steps:
-#     - uses: actions/checkout@v2
-#     - run: echo $0
-#     - run: ls
+  defaults:
+    run:
+      shell: sh
+      working-directory: ./custom
+  steps:
+    - uses: actions/checkout@v2
+    - run: echo $0
+    - run: ls
 
