@@ -1,8 +1,18 @@
-name: Test Composite
-
+name: 'Hello world'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
-  using: "composite"
-
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
 
 #   steps:
 #   - name: Run failing
@@ -18,12 +28,12 @@ runs:
 #       echo ${{github.event_path}}
 #       echo ${{github.workspace}}
         
-  defaults:
-    run:
-      shell: sh
-      working-directory: ./custom
-  steps:
-    - uses: actions/checkout@v2
-    - run: echo $0
-    - run: ls
+#   defaults:
+#     run:
+#       shell: sh
+#       working-directory: ./custom
+#   steps:
+#     - uses: actions/checkout@v2
+#     - run: echo $0
+#     - run: ls
 
