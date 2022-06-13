@@ -14,7 +14,7 @@ runs:
     run: echo ${{ github.action_status }}
     shell: sh
   - name: Check for the action_status with expression
-    if: github.action_status == 'failure'
+    if: failure() && github.action_status == 'failure'
     run: echo ${{ github.action_status }}
     shell: sh
 
