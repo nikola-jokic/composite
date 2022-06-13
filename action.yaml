@@ -3,6 +3,9 @@ name: 'Hello world'
 runs:
   using: 'composite'
   steps:
+  - name: Check for the action_status
+    run: echo ${{ github.action_status }}
+    shell: sh
   - name: Fail here
     run: exit 1
     shell: sh
