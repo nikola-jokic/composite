@@ -7,24 +7,11 @@ runs:
     run: exit 1
     shell: sh
   - name: Check for the action_status
+    if: failure()
     run: echo ${{ github.action_status }}
     shell: sh
-  
-#   steps:
-#   - run: printenv
-#     shell: bash
-#   - shell: bash
-#     run: |
-#       echo ${{github.action_path}}
-#       echo ${{github.event_path}}
-#       echo ${{github.workspace}}
-        
-#   defaults:
-#     run:
-#       shell: sh
-#       working-directory: ./custom
-#   steps:
-#     - uses: actions/checkout@v2
-#     - run: echo $0
-#     - run: ls
-
+  - name: Check for the action_status
+    if: github.action_status == "failure"
+    run: echo ${{ github.action_status }}
+    shell: sh
+ 
