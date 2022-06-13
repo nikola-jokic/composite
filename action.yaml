@@ -3,14 +3,18 @@ name: 'Hello world'
 runs:
   using: 'composite'
   steps:
-  - name: Check for the action_status
+  - name: Echo the action_status
     run: echo ${{ github.action_status }}
     shell: sh
   - name: Fail here
     run: exit 1
     shell: sh
-  - name: Check for the action_status
+  - name: Echo the action_status
     if: failure()
+    run: echo ${{ github.action_status }}
+    shell: sh
+  - name: Check for the action_status with expression
+    if: ${{ github.action_status == 'failure' }}
     run: echo ${{ github.action_status }}
     shell: sh
 
