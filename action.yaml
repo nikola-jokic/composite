@@ -16,6 +16,7 @@ runs:
   - name: Check for the action_status with expression
     if: failure() && github.action_status == 'failure'
     run: echo ${{ github.action_status }} && echo 'Echoing from failure() && action_status == failure'
+    shell: sh
   - name: Check for the action_status with expression
     if: failure() && github.action_status == 'Failure'
     run: echo ${{ github.action_status }} && echo 'Echoing from failure() && action_status == Failure'
